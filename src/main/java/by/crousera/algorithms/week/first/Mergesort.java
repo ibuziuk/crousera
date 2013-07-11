@@ -1,5 +1,7 @@
 package by.crousera.algorithms.week.first;
 
+import java.util.Arrays;
+
 /**
  * The example was taken from http://www.vogella.com/articles/JavaAlgorithmsMergesort/article.html
  * 
@@ -8,11 +10,11 @@ public class Mergesort {
 	private int[] numbers;
 	private int[] helper;
 
-	private int number;
+	private int number; // Array's length
 
 	public void sort(int[] values) {
 		this.numbers = values;
-		number = values.length;
+		number = values.length; 
 		this.helper = new int[number];
 		mergesort(0, number - 1);
 	}
@@ -58,6 +60,7 @@ public class Mergesort {
 			k++;
 			i++;
 		}
+		System.out.println(Arrays.toString(numbers));
 
 	}
 }
