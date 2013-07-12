@@ -6,9 +6,9 @@ package by.crousera.algorithms.week.first;
 
 public class SimpleInversionCounter {
 
-	public long countInversions(int[] array) {
-		long counter = 0;
-		int arrayLength = array.length;
+	public static long countInversions(int[] array) {
+		long counter = 0; // need long here cause int isn't enough for 100 000 array
+ 		int arrayLength = array.length;
 		int lastElementIndex = arrayLength - 1;
 
 		for (int i = 0; i < lastElementIndex; i++) {

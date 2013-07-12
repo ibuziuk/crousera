@@ -13,8 +13,7 @@ public class InversionCounterRunner {
 		try {
 			int[] originalArray = InversionUtil.fileToIntArray(workingDir + "/" + fileName);
 			System.out.println("Array's length: " + originalArray.length);
-			SimpleInversionCounter simpleInversionCounter = new SimpleInversionCounter();
-			System.out.println("Number of inversions: " + simpleInversionCounter.countInversions(originalArray));
+			System.out.println("Number of inversions: " + SmartInversionCounter.countInversions(originalArray));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
