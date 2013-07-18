@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import by.crousera.algorithms.week.second.util.BinarySearch;
+import by.crousera.algorithms.week.second.BinarySearch;
 
 public class BinarySearchTest {
 	@Test

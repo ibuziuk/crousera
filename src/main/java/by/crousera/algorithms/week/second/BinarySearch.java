@@ -1,4 +1,4 @@
-package by.crousera.algorithms.week.second.util;
+package by.crousera.algorithms.week.second;
 
 public class BinarySearch {
 	public static boolean contains(int[] a, int b) {

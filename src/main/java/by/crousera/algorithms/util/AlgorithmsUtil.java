@@ -1,4 +1,4 @@
-package by.crousera.algorithms.week.first.util;
+package by.crousera.algorithms.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.ArrayUtils;
 
-public class InversionUtil {
+public class AlgorithmsUtil {
 
 	public static int[] fileToIntArray(String filename) throws IOException {
 		FileReader fileReader = new FileReader(filename);
