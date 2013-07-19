@@ -1,4 +1,4 @@
-package by.crousera.algorithms.week.second.util.test;
+package by.crousera.algorithms.week.second;
 
 import static org.junit.Assert.*;
 

@@ -13,11 +13,10 @@ public class ComparisonsCounterRunner {
 
 		try {
 			int[] originalArray = AlgorithmsUtil.fileToIntArray(workingDir + "/" + fileName);
-//			int[] originalArray = {3 , 2 , 1, 5};
-			QuickSort quickSort = new QuickSort();
+ 			QuickSort quickSort = new QuickSort();
 			quickSort.sort(originalArray);
-//			System.out.println(originalArray.length);
-			System.out.println(Arrays.toString(originalArray));
+			System.out.println(Arrays.toString(quickSort.getSortedArray()));
+			System.out.println(quickSort.getComparisonCounter());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}				
