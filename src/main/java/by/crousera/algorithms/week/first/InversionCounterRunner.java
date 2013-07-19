@@ -5,7 +5,7 @@ import java.io.IOException;
 import by.crousera.algorithms.util.AlgorithmsUtil;
 
 public class InversionCounterRunner {
-	private static String fileName = "IntegerArray.txt";
+	private static String fileName = "ProgrammingQuestions/week-1/IntegerArray.txt";
 
 	public static void main(String[] args) {
 		String workingDir = System.getProperty("user.dir"); // path to the root of the project

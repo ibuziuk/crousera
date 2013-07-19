@@ -18,14 +18,16 @@ public class QuickSort {
 			return;
 		}
 		comparisonCounter += (high - low);
+
+//*************** 2nd Task - uncomment if pivot is the very last element *************************************** 
+//		exchange(low, high);   
 		
-		int firstIndex = low;
-		int lastIndex  = high;
-		int middleIndex = low + (high-low) / 2;
-		int pivotIndex = getMedianIndex(firstIndex, lastIndex, middleIndex);
-		
-//		exchange(low, pivotIndex); // uncomment if pivot is the median element 
-//		exchange(low, high); // uncomment if pivot is the very last element 
+//*************** 3rd Task - uncomment if pivot is the median element ***************************************       
+//		int firstIndex = low;
+//		int lastIndex  = high;
+//		int middleIndex = low + (high-low) / 2;
+//		int pivotIndex = getMedianIndex(firstIndex, lastIndex, middleIndex);	
+//		exchange(low, pivotIndex);
 		
 		int pivot = sortedArray[low];  
 		int i = low + 1;
