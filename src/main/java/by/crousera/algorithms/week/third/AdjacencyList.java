@@ -5,15 +5,17 @@ import java.util.Iterator;
 import java.util.List;
 
 public class AdjacencyList {
-	private int n; // number of vertices
-	private List<Integer>[] graph; // graph is an array of lists
+	private List<Integer>[] graph; // graph is an array of lists; [0] -> 1, 3, 2
 
-	public AdjacencyList(int n) {
-		this.n = n; 
-		graph = (List<Integer>[]) new List[n + 1]; // HACK - I'm really sorry for that (first element of the array will be null)
-		for (int i = 1; i <= n; i++) {
+	public AdjacencyList(int numberOfVertices) { 
+		graph = (List<Integer>[]) new List[numberOfVertices];
+		for (int i = 0; i < numberOfVertices; i++) {
 			graph[i] = new ArrayList<Integer>();
 		}
+	}
+	
+	public AdjacencyList(List<Integer>[] graph) {
+		this.graph = graph;
 	}
 
 	public void addEdge(int i, int j) { // adding edge i -> j
@@ -41,8 +43,8 @@ public class AdjacencyList {
 	public List<Integer>[] getGraph() {
 		return graph;
 	}
-
-	public int getN() {
-		return n;
+	
+	public void setGraph(List<Integer>[] graph) {
+		this.graph = graph;
 	}
 }
