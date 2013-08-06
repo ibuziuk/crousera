@@ -1,6 +1,9 @@
 package by.crousera.algorithms.week.fifth;
 
 import java.io.IOException;
+import java.util.LinkedList;
+
+import org.jgrapht.WeightedGraph;
 
 /*
  * The file contains an adjacency list representation of an undirected weighted graph with 200 vertices labeled 1 to 200. 
@@ -24,12 +27,22 @@ import java.io.IOException;
  * and you'll probably need to maintain some kind of mapping between vertices and their positions in the heap.
  */
 
-public class DeijkstraShortestPathRunner {
+public class DijkstraShortestPathRunner {
 	private static final String FILE_NAME = "ProgrammingQuestions/week-5/dijkstraData.txt";
 	
 	public static void main(String[] args) throws IOException {
 		String workingDir = System.getProperty("user.dir"); // path to the root of the project
 		Graph graph = GraphUtil.initGraphFromFile(workingDir + "/" + FILE_NAME); 
+		DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm(graph);
+		dijkstraAlgorithm.execute(new Vertex(1));
+		LinkedList<Vertex> path = dijkstraAlgorithm.getPath(new Vertex(197));
+		int weight = dijkstraAlgorithm.getWeight(path);
+		
+	    for (Vertex vertex : path) {
+	        System.out.println(vertex.getId());
+	    }
+	    System.out.println("-------------------");
+	    System.out.println("Weight: " +  weight);
 	}
 
 }
