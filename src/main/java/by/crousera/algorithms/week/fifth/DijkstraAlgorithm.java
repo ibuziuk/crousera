@@ -20,23 +20,23 @@ public class DijkstraAlgorithm {
 	private Set<Vertex> unSettledNodes;
 	private Map<Vertex, Integer> distance;
 	private Map<Vertex, Vertex> predecessors;
-	private Vertex sourceVertex; 
-	
+	private Vertex sourceVertex;
+
 	public DijkstraAlgorithm(Graph graph) {
 		this.vertecies = new ArrayList<Vertex>(graph.getVertecies());
 		this.edges = new ArrayList<Edge>(graph.getEdges());
 	}
-	
+
 	public void execute(Vertex sourceVertex) {
 		this.sourceVertex = sourceVertex;
 		settledNodes = new HashSet<Vertex>();
 		unSettledNodes = new HashSet<Vertex>();
 		distance = new HashMap<Vertex, Integer>();
 		predecessors = new HashMap<Vertex, Vertex>();
-		
+
 		distance.put(sourceVertex, 0);
 		unSettledNodes.add(sourceVertex);
-		
+
 		while (unSettledNodes.size() > 0) {
 			Vertex minNode = getMinimum(unSettledNodes);
 			settledNodes.add(minNode);
@@ -44,9 +44,9 @@ public class DijkstraAlgorithm {
 			findMinimalDistances(minNode);
 		}
 	}
-	
+
 	private void findMinimalDistances(Vertex minNode) {
-		List <Vertex> adjacentNodes = getNeighbors(minNode);
+		List<Vertex> adjacentNodes = getNeighbors(minNode);
 		for (Vertex target : adjacentNodes) {
 			if (getShortestDistance(target) > getShortestDistance(minNode) + getDistance(minNode, target)) {
 				distance.put(target, getShortestDistance(minNode) + getDistance(minNode, target));
@@ -54,7 +54,7 @@ public class DijkstraAlgorithm {
 				unSettledNodes.add(target);
 			}
 		}
-		
+
 	}
 
 	private int getDistance(Vertex minNode, Vertex target) {
@@ -87,34 +87,34 @@ public class DijkstraAlgorithm {
 				}
 			}
 		}
-		
+
 		return minVertex;
 	}
-	
+
 	public LinkedList<Vertex> getPath(Vertex target) {
-	    LinkedList<Vertex> path = new LinkedList<Vertex>();
-	    Vertex step = target;
-	    // Check if a path exists
-	    if (predecessors.get(step) == null) {
-	      return null;
-	    }
-	    path.add(step);
-	    while (predecessors.get(step) != null) {
-	      step = predecessors.get(step);
-	      path.add(step);
-	    }
-	    // Put it into the correct order
-	    Collections.reverse(path);
-	    return path;
+		LinkedList<Vertex> path = new LinkedList<Vertex>();
+		Vertex step = target;
+		// Check if a path exists
+		if (predecessors.get(step) == null) {
+			return null;
+		}
+		path.add(step);
+		while (predecessors.get(step) != null) {
+			step = predecessors.get(step);
+			path.add(step);
+		}
+		// Put it into the correct order
+		Collections.reverse(path);
+		return path;
 	}
-	
+
 	private int getShortestDistance(Vertex destination) {
-	    Integer d = distance.get(destination);
-	    if (d == null) {
-	      return Integer.MAX_VALUE;
-	    } else {
-	      return d;
-	    }
+		Integer d = distance.get(destination);
+		if (d == null) {
+			return Integer.MAX_VALUE;
+		} else {
+			return d;
+		}
 	}
 
 	private boolean isSettled(Vertex vertex) {
@@ -132,7 +132,7 @@ public class DijkstraAlgorithm {
 		}
 		return weight;
 	}
-	
+
 	private int getWeight(Vertex tail, Vertex head) {
 		for (Edge e : edges) {
 			if (e.getTail().equals(tail) && e.getHead().equals(head)) {

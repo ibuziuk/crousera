@@ -3,15 +3,14 @@ package by.crousera.algorithms.week.fifth;
 public class Vertex {
 	final private int id;
 
-	
 	public Vertex(int id) {
 		this.id = id;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

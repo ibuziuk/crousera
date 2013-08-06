@@ -1,9 +1,9 @@
 package by.crousera.algorithms.week.first;
 
-/**
+/*
  * The example was taken from http://www.vogella.com/articles/JavaAlgorithmsMergesort/article.html
- * 
  */
+
 public class Mergesort {
 	private int[] numbers;
 	private int[] helper;
