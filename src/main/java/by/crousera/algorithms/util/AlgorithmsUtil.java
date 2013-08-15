@@ -10,8 +10,8 @@ import org.apache.commons.lang3.ArrayUtils;
 
 public class AlgorithmsUtil {
 
-	public static int[] fileToIntArray(String filename) throws IOException {
-		FileReader fileReader = new FileReader(filename);
+	public static int[] fileToIntArray(String fileName) throws IOException {
+		FileReader fileReader = new FileReader(fileName);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		List<Integer> numbers = new ArrayList<Integer>();
 		String line = null;
@@ -22,5 +22,19 @@ public class AlgorithmsUtil {
 		}
 		bufferedReader.close();
 		return ArrayUtils.toPrimitive(numbers.toArray(new Integer[numbers.size()]));
+	}
+	
+	public static long[] fileToLongArray(String fileName) throws NumberFormatException, IOException {
+		FileReader fileReader = new FileReader(fileName);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
+		List<Long> numbers = new ArrayList<Long>();
+		String line = null;
+		long number;
+		while ((line = bufferedReader.readLine()) != null) {
+			number = Long.parseLong(line);
+			numbers.add(number);
+		}
+		bufferedReader.close();
+		return ArrayUtils.toPrimitive(numbers.toArray(new Long[numbers.size()]));
 	}
 }
