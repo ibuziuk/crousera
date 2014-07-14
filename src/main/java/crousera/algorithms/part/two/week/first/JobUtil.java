@@ -19,7 +19,6 @@ public class JobUtil {
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String line;
 		while ((line = br.readLine()) != null) {
-			System.out.println(jobs.size());
 			String[] splited = line.split(SPACE);
 			if (splited.length > 1) {
 				int weight = Integer.valueOf(splited[0]);
@@ -28,7 +27,7 @@ public class JobUtil {
 				
 				
 				// Sorting while reading O = n^2
-				int score = job.getScore();
+				double score = job.getScore();
 				if (jobs.isEmpty()) {
 					jobs.add(job); // adding the very first one
 				} else {
@@ -42,7 +41,7 @@ public class JobUtil {
 					} else {
 					    for (int i = 0; i < jobs.size(); i++) {
 					    	Job currentJob = jobs.get(i);
-					    	int currentScore = currentJob.getScore();
+					    	double currentScore = currentJob.getScore();
 					    	int currentWeight = currentJob.getWeight();
 					    	
 					    	if (score == currentScore) {
@@ -55,7 +54,7 @@ public class JobUtil {
 					    			} else {
 					    				for (int j = i + 1; j < jobs.size(); j++) {
 						    				Job nextJob = jobs.get(j);
-						    				int nextScore = nextJob.getScore();
+						    				double nextScore = nextJob.getScore();
 						    				int nextWeight = nextJob.getWeight();
 						    				
 						    				if (score != nextScore) {
